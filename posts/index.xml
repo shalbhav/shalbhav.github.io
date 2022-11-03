@@ -5,12 +5,11 @@
     <link>http://shalbhav.github.io/posts/</link>
     <description>Recent content in Posts on YAB (Yet Another Blog)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 03 Nov 2022 13:05:05 +0530</lastBuildDate><atom:link href="http://shalbhav.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://shalbhav.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Monty Hall Problem: Intuition and Simulation</title>
       <link>http://shalbhav.github.io/posts/monty-hall-sim/</link>
-      <pubDate>Thu, 03 Nov 2022 13:05:05 +0530</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://shalbhav.github.io/posts/monty-hall-sim/</guid>
       <description>The Monty Hall problem is an interesting puzzle in probability which has a counter-intuitive answer. In fact, it is documented that many well known mathematicians, PhDs and nobel laureates got the answer wrong too and many people continue to get the answer wrong.
@@ -21,10 +20,19 @@ Imagine a game show. There are 3 doors and behind one door there is a car and be
     <item>
       <title>Presenting with Emacs Org-mode</title>
       <link>http://shalbhav.github.io/posts/org-mode-present-focus/</link>
-      <pubDate>Thu, 03 Nov 2022 08:52:12 +0530</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://shalbhav.github.io/posts/org-mode-present-focus/</guid>
       <description>Emacs org-mode is an emacs major mode used for note keeping, project planning and for creating documents and articles. It has many export options from markdown to pdf to latex. While all this is great for document generation, it can also be used for creating presentations with org-reveal. Still, this needs a browser and sometimes you really have more text than a few bullet points and want a simpler option to just focus on the text under each heading by narrowing to each heading as you present.</description>
+    </item>
+    
+    <item>
+      <title>Extending life of the Mosquito Bat</title>
+      <link>http://shalbhav.github.io/posts/extend-life-mosquito-bat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/extend-life-mosquito-bat/</guid>
+      <description>Mosquito bats work great for killing mosquitoes and flies. Until they don&amp;rsquo;t work! They hardly last one mosquito generation. It turns out that the rechargeable battery in them go bad fairly quickly. So as a small hack, I took out the cheap battery they come with and replaced it with a decent rechargeable LiIon 3.7v 2200mah one. You have to modify the battery housing a little bit by carving out some extra bits of plastic to make the 18650 type battery to fit.</description>
     </item>
     
   </channel>
