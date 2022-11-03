@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>programming on YAB (Yet Another Blog)</title>
+    <link>http://shalbhav.github.io/categories/programming/</link>
+    <description>Recent content in programming on YAB (Yet Another Blog)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Nov 2022 08:52:12 +0530</lastBuildDate><atom:link href="http://shalbhav.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Presenting with Emacs Org-mode</title>
+      <link>http://shalbhav.github.io/posts/org-mode-present-focus/</link>
+      <pubDate>Thu, 03 Nov 2022 08:52:12 +0530</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/org-mode-present-focus/</guid>
+      <description>Emacs org-mode is an emacs major mode used for note keeping, project planning and for creating documents and articles. It has many export options from markdown to pdf to latex. While all this is great for document generation, it can also be used for creating presentations with org-reveal. Still, this needs a browser and sometimes you really have more text than a few bullet points and want a simpler option to just focus on the text under each heading by narrowing to each heading as you present.</description>
+    </item>
+    
+  </channel>
+</rss>

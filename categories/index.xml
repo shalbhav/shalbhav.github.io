@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on YAB (Yet Another Blog)</title>
+    <link>http://shalbhav.github.io/categories/</link>
+    <description>Recent content in Categories on YAB (Yet Another Blog)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Nov 2022 08:52:12 +0530</lastBuildDate><atom:link href="http://shalbhav.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming</title>
+      <link>http://shalbhav.github.io/categories/programming/</link>
+      <pubDate>Thu, 03 Nov 2022 08:52:12 +0530</pubDate>
+      
+      <guid>http://shalbhav.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shorts</title>
+      <link>http://shalbhav.github.io/categories/shorts/</link>
+      <pubDate>Thu, 03 Nov 2022 08:52:12 +0530</pubDate>
+      
+      <guid>http://shalbhav.github.io/categories/shorts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>http://shalbhav.github.io/categories/math/</link>
+      <pubDate>Thu, 03 Nov 2022 08:52:06 +0530</pubDate>
+      
+      <guid>http://shalbhav.github.io/categories/math/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
