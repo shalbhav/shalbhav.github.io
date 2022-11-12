@@ -34,5 +34,15 @@
 Let&amp;rsquo;s create a small c program that is statically compiled.</description>
     </item>
     
+    <item>
+      <title>Analyzing Kubernetes scaling using some Algebra</title>
+      <link>http://shalbhav.github.io/posts/k8s-hpa-algebra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/k8s-hpa-algebra/</guid>
+      <description>Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.
+Starting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing).</description>
+    </item>
+    
   </channel>
 </rss>

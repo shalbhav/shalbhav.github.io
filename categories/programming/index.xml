@@ -15,15 +15,5 @@
       <description>Emacs org-mode is an emacs major mode used for note keeping, project planning and for creating documents and articles. It has many export options from markdown to pdf to latex. While all this is great for document generation, it can also be used for creating presentations with org-reveal. Still, this needs a browser and sometimes you really have more text than a few bullet points and want a simpler option to just focus on the text under each heading by narrowing to each heading as you present.</description>
     </item>
     
-    <item>
-      <title>A container does not need an OS</title>
-      <link>http://shalbhav.github.io/posts/container-no-os/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://shalbhav.github.io/posts/container-no-os/</guid>
-      <description>Apparently a container does not even need an OS whereas VMs do. Container != VM, but I never stopped to think about this before. Processes within the container can directly talk to the kernel on which the container is running. Most containers are built with a base OS image. Turns out you can create an image without a base OS by pulling the scratch image, that contains nothing.
-Let&amp;rsquo;s create a small c program that is statically compiled.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://shalbhav.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>linux</title>
+      <link>http://shalbhav.github.io/categories/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>math</title>
       <link>http://shalbhav.github.io/categories/math/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
