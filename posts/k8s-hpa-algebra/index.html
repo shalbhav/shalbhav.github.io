@@ -122,8 +122,8 @@ Starting with v1.20, Kubernetes started offering HPA scaling based on container 
   "keywords": [
     
   ],
-  "articleBody": "Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.\nStarting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing). This offers another way to scale the target resource based on container metrics. Pods can have multiple containers, so this allows the user to choose the metric utilization over a specific container of all the Pods.\nThere are implications due to this. Most notably, as mentioned in the official documentation example, if you have a web application and a logging sidecar, you can scale based on the resource utilization of the web application, ignoring the sidecar container. This could be extended to other applications with multiple sidecars. As I describe next, there are certain constraints under which this method of scaling should be used.\nLet’s say we have a Pod with two containers A and B, and we want to scale on resource utilization of container A.\nLet \\(U_{a}\\) and \\(U_{b}\\) be the resource utilizations of containers A and B. Let \\(Q_{a}\\) and \\(Q_{b}\\) be the metric Request setting of the two containers defined in the Pod Spec.\nIn the per-pod resource metric based scaling, the HPA will scale based on the utilization using the following formula:\nPer-pod based usage:\n\\begin{equation} P_{u} = \\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} \\end{equation}\nIn the container resource metric based scaling, the HPA will scale based on the utilization of container A, using the following formula:\nContainer based usage:\n\\begin{equation} C_{u} = \\frac{U_{a}}{Q_{a}} \\end{equation}\nFor the same utilizations and Request settings in both scenarios, the HPA will scale Pods earlier in the case of container resource metrics compared to per-pod resource metrics, only if the resource utilization of container B is less than container A, i.e.,\nif\n\\begin{equation} \\frac{U_{b}}{Q_{b}} \u003c \\frac{U_{a}}{Q_{a}} \\end{equation}\nBy substituting \\( U_{b} \u003c \\frac{U_{a}Q_{b}}{Q_{a}} \\) into \\( (1) \\) and simplifying, we get:\n\\begin{equation} \\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} \u003c \\frac{U_{a}}{Q_{a}} \\end{equation}\nThe resource utilization of container A will meet the threshold earlier using container based usage and so HPA scales this earlier - only if the resource utilization of the other containers are less compared to the container (A) we are interested in.\n",
-  "wordCount" : "411",
+  "articleBody": "Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.\nStarting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing). This offers another way to scale the target resource based on container metrics. Pods can have multiple containers, so this allows the user to choose the metric utilization over a specific container of all the Pods.\nThere are implications due to this. Most notably, as mentioned in the official documentation example, if you have a web application and a logging sidecar, you can scale based on the resource utilization of the web application, ignoring the sidecar container. This could be extended to other applications with multiple sidecars. As I describe next, there are certain constraints under which this method of scaling should be used.\nLet’s say we have a Pod with two containers A and B, and we want to scale on resource utilization of container A.\nLet \\(U_{a}\\) and \\(U_{b}\\) be the resource utilizations of containers A and B. Let \\(Q_{a}\\) and \\(Q_{b}\\) be the metric request setting of the two containers defined in the Pod Spec.\nIn the per-pod resource metric based scaling, the HPA will scale based on the utilization using the following formula:\nPer-pod based usage:\n\\begin{equation} P_{u} = \\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} \\end{equation}\nIn the container resource metric based scaling, the HPA will scale based on the utilization of container A, using the following formula:\nContainer based usage:\n\\begin{equation} C_{u} = \\frac{U_{a}}{Q_{a}} \\end{equation}\nFor the same utilizations and request settings in both scenarios, the HPA will scale Pods earlier while using container resource metrics compared to per-pod resource metrics; only if the resource utilization of container B is less than container A, i.e.,\nif\n\\begin{equation} \\frac{U_{b}}{Q_{b}} \u003c \\frac{U_{a}}{Q_{a}} \\end{equation}\nBy substituting \\( U_{b} \u003c \\frac{U_{a}Q_{b}}{Q_{a}} \\) into \\( (1) \\) and simplifying, we get:\n\\begin{equation} \\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} \u003c \\frac{U_{a}}{Q_{a}} \\end{equation}\nThe resource utilization of container A will meet the threshold earlier using container based usage and so HPA scales this earlier - only if the resource utilization of the other containers are less compared to the container (A) we are interested in. So make sure that the other container resource usages are well below the container over which you are scaling, otherwise scaling may be delayed affecting performance.\n",
+  "wordCount" : "435",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -219,7 +219,7 @@ Starting with v1.20, Kubernetes started offering HPA scaling based on container 
     <h1 class="post-title">
       Analyzing Kubernetes scaling using some Algebra
     </h1>
-    <div class="post-meta">2 min
+    <div class="post-meta">3 min
 
 </div>
   </header> 
@@ -246,7 +246,7 @@ should be used.</p>
 scale on resource utilization of container A.</p>
 <p>Let \(U_{a}\) and \(U_{b}\) be the resource utilizations of
 containers A and B. Let \(Q_{a}\) and \(Q_{b}\) be the metric
-<code>Request</code> setting of the two containers defined in the Pod Spec.</p>
+<a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">request</a> setting of the two containers defined in the Pod Spec.</p>
 <p>In the per-pod resource metric based scaling, the HPA will scale based
 on the utilization using the following formula:</p>
 <p>Per-pod based usage:</p>
@@ -259,9 +259,9 @@ based on the utilization of container A, using the following formula:</p>
 <p>\begin{equation}
 C_{u} = \frac{U_{a}}{Q_{a}}
 \end{equation}</p>
-<p>For the same utilizations and <code>Request</code> settings in both scenarios,
-the HPA will scale Pods earlier in the case of container resource
-metrics compared to per-pod resource metrics, <em><strong>only if</strong></em> the resource
+<p>For the same utilizations and <code>request</code> settings in both scenarios,
+the HPA will scale Pods earlier while using container resource
+metrics compared to per-pod resource metrics; <em><strong>only if</strong></em> the resource
 utilization of container B is less than container A, i.e.,</p>
 <p>if</p>
 <p>\begin{equation}
@@ -274,8 +274,11 @@ utilization of container B is less than container A, i.e.,</p>
 \end{equation}</p>
 <p>The resource utilization of container A will meet the threshold
 earlier using container based usage and so HPA scales this earlier -
-<strong>only</strong> if the resource utilization of the other containers are less
-compared to the container (A) we are interested in.</p>
+<strong>only if</strong> the resource utilization of the other containers are less
+compared to the container (A) we are interested in. So make sure that
+the other container resource usages are well below the container over
+which you are scaling, otherwise scaling may be delayed affecting
+performance.</p>
 
 
   </div>
