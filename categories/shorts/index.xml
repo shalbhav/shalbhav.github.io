@@ -44,5 +44,16 @@ Let&amp;rsquo;s create a small c program that is statically compiled.</descripti
 Starting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing).</description>
     </item>
     
+    <item>
+      <title>Expectation of distances of random points on a circular disc</title>
+      <link>http://shalbhav.github.io/posts/expected-distance-disc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/expected-distance-disc/</guid>
+      <description>I came across this probability problem and thought it was interesting.
+What is the expectation of distance (from the center) of a circular disc to uniformly distributed random points on the disc?
+If you pick a random point (or throw a dart) on a circle, there are more chances of the point landing somewhere between the center and the perimeter of the circular disc. Intuitively, this is because there are more points on the disc, i.</description>
+    </item>
+    
   </channel>
 </rss>

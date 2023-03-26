@@ -12,9 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://shalbhav.github.io/posts/monty-hall-sim/</guid>
-      <description>The Monty Hall problem is an interesting puzzle in probability which has a counter-intuitive answer. In fact, it is documented that many well known mathematicians, PhDs and nobel laureates got the answer wrong too and many people continue to get the answer wrong.
+      <description>The Monty Hall problem is an interesting puzzle in probability which has a counter-intuitive answer. In fact, it is documented that many people got the answer wrong and many people continue to get the answer wrong.
 The problem The problem goes somewhat like this:
-Imagine a game show. There are 3 doors and behind one door there is a car and behind the other 2, goats.</description>
+Imagine a game show. There are 3 doors and behind one door there is a car and behind the other 2, goats. The player picks a door hoping to win a car that&amp;rsquo;s behind the door.</description>
     </item>
     
   </channel>
