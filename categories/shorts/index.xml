@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://shalbhav.github.io/categories/shorts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Entropy and Life</title>
+      <link>http://shalbhav.github.io/posts/entropy-and-life/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/entropy-and-life/</guid>
+      <description>Life needs energy to survive. Energy is expended to perform the basic life functions like movement, hunting and gathering, protecting from prey and natural elements. Energy is spent when it is converted from one form to another. Eventually, the energy within the living organism is expelled from the organism while useful work is performed. For example, while humans and other animals do physical activity like walking or running, the energy in their cells is eventually converted to carbon dioxide and heat during metabolism, both of which are expelled from the organism.</description>
+    </item>
+    
+    <item>
       <title>Presenting with Emacs Org-mode</title>
       <link>http://shalbhav.github.io/posts/org-mode-present-focus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

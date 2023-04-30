@@ -5,12 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Analyzing Kubernetes scaling using some Algebra | YAB (Yet Another Blog)</title>
-<meta name="keywords" content="">
-<meta name="description" content="Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.
-Starting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing).">
+<title>Entropy and Life | YAB (Yet Another Blog)</title>
+<meta name="keywords" content="probability">
+<meta name="description" content="Life needs energy to survive. Energy is expended to perform the basic life functions like movement, hunting and gathering, protecting from prey and natural elements. Energy is spent when it is converted from one form to another. Eventually, the energy within the living organism is expelled from the organism while useful work is performed. For example, while humans and other animals do physical activity like walking or running, the energy in their cells is eventually converted to carbon dioxide and heat during metabolism, both of which are expelled from the organism.">
 <meta name="author" content="">
-<link rel="canonical" href="http://shalbhav.github.io/posts/k8s-hpa-algebra/">
+<link rel="canonical" href="http://shalbhav.github.io/posts/entropy-and-life/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -57,18 +56,16 @@ Starting with v1.20, Kubernetes started offering HPA scaling based on container 
         }
 
     </style>
-</noscript><meta property="og:title" content="Analyzing Kubernetes scaling using some Algebra" />
-<meta property="og:description" content="Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.
-Starting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing)." />
+</noscript><meta property="og:title" content="Entropy and Life" />
+<meta property="og:description" content="Life needs energy to survive. Energy is expended to perform the basic life functions like movement, hunting and gathering, protecting from prey and natural elements. Energy is spent when it is converted from one form to another. Eventually, the energy within the living organism is expelled from the organism while useful work is performed. For example, while humans and other animals do physical activity like walking or running, the energy in their cells is eventually converted to carbon dioxide and heat during metabolism, both of which are expelled from the organism." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://shalbhav.github.io/posts/k8s-hpa-algebra/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://shalbhav.github.io/posts/entropy-and-life/" /><meta property="article:section" content="posts" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Analyzing Kubernetes scaling using some Algebra"/>
-<meta name="twitter:description" content="Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.
-Starting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing)."/>
+<meta name="twitter:title" content="Entropy and Life"/>
+<meta name="twitter:description" content="Life needs energy to survive. Energy is expended to perform the basic life functions like movement, hunting and gathering, protecting from prey and natural elements. Energy is spent when it is converted from one form to another. Eventually, the energy within the living organism is expelled from the organism while useful work is performed. For example, while humans and other animals do physical activity like walking or running, the energy in their cells is eventually converted to carbon dioxide and heat during metabolism, both of which are expelled from the organism."/>
 
 
 <script type="application/ld+json">
@@ -85,8 +82,8 @@ Starting with v1.20, Kubernetes started offering HPA scaling based on container 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Analyzing Kubernetes scaling using some Algebra",
-      "item": "http://shalbhav.github.io/posts/k8s-hpa-algebra/"
+      "name": "Entropy and Life",
+      "item": "http://shalbhav.github.io/posts/entropy-and-life/"
     }
   ]
 }
@@ -95,20 +92,20 @@ Starting with v1.20, Kubernetes started offering HPA scaling based on container 
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Analyzing Kubernetes scaling using some Algebra",
-  "name": "Analyzing Kubernetes scaling using some Algebra",
-  "description": "Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.\nStarting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing).",
+  "headline": "Entropy and Life",
+  "name": "Entropy and Life",
+  "description": "Life needs energy to survive. Energy is expended to perform the basic life functions like movement, hunting and gathering, protecting from prey and natural elements. Energy is spent when it is converted from one form to another. Eventually, the energy within the living organism is expelled from the organism while useful work is performed. For example, while humans and other animals do physical activity like walking or running, the energy in their cells is eventually converted to carbon dioxide and heat during metabolism, both of which are expelled from the organism.",
   "keywords": [
-    
+    "probability"
   ],
-  "articleBody": "Kubernetes Horizontal Pod Autoscaling provides a way to scale up number of Pod replicas in a deployment based on per-pod metric thresholds set by the operator. Most often the per-pod resource metrics (like CPU and memory) are used to scale the pods. The utilization value is computed over all the containers in each Pod.\nStarting with v1.20, Kubernetes started offering HPA scaling based on container resource metrics as an alpha feature (as of the time of this writing). This offers another way to scale the target resource based on container metrics. Pods can have multiple containers, so this allows the user to choose the metric utilization over a specific container of all the Pods.\nThere are implications due to this. Most notably, as mentioned in the official documentation example, if you have a web application and a logging sidecar, you can scale based on the resource utilization of the web application, ignoring the sidecar container. This could be extended to other applications with multiple sidecars. As I describe next, there are certain constraints under which this method of scaling should be used.\nLet’s say we have a Pod with two containers A and B, and we want to scale on resource utilization of container A.\nLet \\(U_{a}\\) and \\(U_{b}\\) be the resource utilizations of containers A and B. Let \\(Q_{a}\\) and \\(Q_{b}\\) be the metric request setting of the two containers defined in the Pod Spec.\nIn the per-pod resource metric based scaling, the HPA will scale based on the utilization using the following formula:\nPer-pod based usage:\n\\begin{equation} P_{u} = \\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} \\end{equation}\nIn the container resource metric based scaling, the HPA will scale based on the utilization of container A, using the following formula:\nContainer based usage:\n\\begin{equation} C_{u} = \\frac{U_{a}}{Q_{a}} \\end{equation}\nFor the same utilizations and request settings in both scenarios, the HPA will scale Pods earlier while using container resource metrics compared to per-pod resource metrics; only if the resource utilization of container B is less than container A, i.e.,\nif\n\\begin{equation} \\frac{U_{b}}{Q_{b}} \u003c \\frac{U_{a}}{Q_{a}} \\end{equation}\nBy substituting \\( U_{b} \u003c \\frac{U_{a}Q_{b}}{Q_{a}} \\) into \\( (1) \\) and simplifying, we get:\n\\begin{equation} \\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} \u003c \\frac{U_{a}}{Q_{a}} \\end{equation}\nThe resource utilization of container A will meet the threshold earlier using container based usage and so HPA scales this earlier - only if the resource utilization of the other containers are less compared to the container (A) we are interested in. So make sure that the other container resource usages are well below the container over which you are scaling, otherwise scaling may be delayed affecting performance.\n",
-  "wordCount" : "435",
+  "articleBody": "Life needs energy to survive. Energy is expended to perform the basic life functions like movement, hunting and gathering, protecting from prey and natural elements. Energy is spent when it is converted from one form to another. Eventually, the energy within the living organism is expelled from the organism while useful work is performed. For example, while humans and other animals do physical activity like walking or running, the energy in their cells is eventually converted to carbon dioxide and heat during metabolism, both of which are expelled from the organism. We then ingest energy from outside the environment and replinish our supply, thus raising the energy available to us.\nEntropy is the relative distribution of energy in a closed system. The earth can be thought of a closed system where living organisms ingest food from the environment. One can also think of life as an open system which interacts with the environment and continously draw energy from it. Thus energy is redistributed among different living things as they go through the life and death process. In other words, living beings need to be in a state of higher energy with respect to their environment, thus lowering their entropy. Life is a low entropy system.\nWhen death comes about, the organism is no longer able to feed itself and raise it’s energy (or lower it’s entropy) and it’s energy is assimilated or diffused into the environment, thus the entropy decreases.\nSo even in life and death, the second law of thermodynamics makes it’s point.\n",
+  "wordCount" : "254",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://shalbhav.github.io/posts/k8s-hpa-algebra/"
+    "@id": "http://shalbhav.github.io/posts/entropy-and-life/"
   },
   "publisher": {
     "@type": "Organization",
@@ -196,106 +193,77 @@ Starting with v1.20, Kubernetes started offering HPA scaling based on container 
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://shalbhav.github.io/">Home</a>&nbsp;»&nbsp;<a href="http://shalbhav.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
-      Analyzing Kubernetes scaling using some Algebra
+      Entropy and Life
     </h1>
-    <div class="post-meta">3 min
+    <div class="post-meta">2 min
 
 </div>
   </header> 
 
-  <div class="post-content"><p>Kubernetes <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">Horizontal Pod Autoscaling</a> provides a way to scale up
-number of Pod replicas in a deployment based on per-pod metric thresholds set
-by the operator. Most often the per-pod resource metrics (like CPU and
-memory) are used to scale the pods. The utilization value is computed
-over all the containers in each Pod.</p>
-<p>Starting with v1.20, Kubernetes started offering HPA scaling based on
-<a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#container-resource-metrics">container resource metrics</a> as an <em><code>alpha</code></em> feature (as of the time of
-this writing). This offers another way to scale the target resource
-based on container metrics. Pods can have multiple containers, so this
-allows the user to choose the metric utilization over a specific
-container of all the Pods.</p>
-<p>There are implications due to this. Most notably, as mentioned in the
-official documentation example, if you have a web application and a
-logging sidecar, you can scale based on the resource utilization of
-the web application, ignoring the sidecar container. This could be
-extended to other applications with multiple sidecars. As I describe
-next, there are certain constraints under which this method of scaling
-should be used.</p>
-<p>Let&rsquo;s say we have a Pod with two containers A and B, and we want to
-scale on resource utilization of container A.</p>
-<p>Let \(U_{a}\) and \(U_{b}\) be the resource utilizations of
-containers A and B. Let \(Q_{a}\) and \(Q_{b}\) be the metric
-<a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">request</a> setting of the two containers defined in the Pod Spec.</p>
-<p>In the per-pod resource metric based scaling, the HPA will scale based
-on the utilization using the following formula:</p>
-<p>Per-pod based usage:</p>
-<p>\begin{equation}
-P_{u} = \frac{U_{a} + U_{b}}{Q_{a} + Q_{b}}
-\end{equation}</p>
-<p>In the container resource metric based scaling, the HPA will scale
-based on the utilization of container A, using the following formula:</p>
-<p>Container based usage:</p>
-<p>\begin{equation}
-C_{u} = \frac{U_{a}}{Q_{a}}
-\end{equation}</p>
-<p>For the same utilizations and <code>request</code> settings in both scenarios,
-the HPA will scale Pods earlier while using container resource
-metrics compared to per-pod resource metrics; <em><strong>only if</strong></em> the resource
-utilization of container B is less than container A, i.e.,</p>
-<p>if</p>
-<p>\begin{equation}
-\frac{U_{b}}{Q_{b}} &lt; \frac{U_{a}}{Q_{a}}
-\end{equation}</p>
-<p>By substituting \( U_{b} &lt; \frac{U_{a}Q_{b}}{Q_{a}} \) into
-\( (1) \) and simplifying, we get:</p>
-<p>\begin{equation}
-\frac{U_{a} + U_{b}}{Q_{a} + Q_{b}} &lt; \frac{U_{a}}{Q_{a}}
-\end{equation}</p>
-<p>The resource utilization of container A will meet the threshold
-earlier using container based usage and so HPA scales this earlier -
-<strong>only if</strong> the resource utilization of the other containers are less
-compared to the container (A) we are interested in. So make sure that
-the other container resource usages are well below the container over
-which you are scaling, otherwise scaling may be delayed affecting
-performance.</p>
+  <div class="post-content"><p>Life needs energy to survive. Energy is expended to perform the basic
+life functions like movement, hunting and gathering, protecting from
+prey and natural elements. Energy is spent when it is converted from
+one form to another. Eventually, the energy within the living organism
+is expelled from the organism while useful work is performed. For
+example, while humans and other animals do physical activity like
+walking or running, the energy in their cells is eventually converted
+to carbon dioxide and heat during metabolism, both of which are
+expelled from the organism. We then ingest energy from outside the
+environment and replinish our supply, thus raising the energy
+available to us.</p>
+<p>Entropy is the relative distribution of energy in a closed system. The
+earth can be thought of a closed system where living organisms ingest
+food from the environment. One can also think of life as an open
+system which interacts with the environment and continously draw
+energy from it. Thus energy is redistributed among different living
+things as they go through the life and death process. In other words,
+living beings need to be in a state of higher energy with respect to
+their environment, thus lowering their entropy. Life is a low entropy
+system.</p>
+<p>When death comes about, the organism is no longer able to feed
+itself and raise it&rsquo;s energy (or lower it&rsquo;s entropy) and it&rsquo;s energy
+is assimilated or diffused into the environment, thus the entropy
+decreases.</p>
+<p>So even in life and death, the second law of thermodynamics makes it&rsquo;s point.</p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://shalbhav.github.io/tags/probability/">probability</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://shalbhav.github.io/posts/container-no-os/">
+  <a class="prev" href="http://shalbhav.github.io/posts/monty-hall-sim/">
     <span class="title">« Prev</span>
     <br>
-    <span>A container does not need an OS</span>
+    <span>The Monty Hall Problem: Intuition and Simulation</span>
   </a>
-  <a class="next" href="http://shalbhav.github.io/posts/2023/">
+  <a class="next" href="http://shalbhav.github.io/posts/org-mode-present-focus/">
     <span class="title">Next »</span>
     <br>
-    <span>2023</span>
+    <span>Presenting with Emacs Org-mode</span>
   </a>
 </nav>
 
 
 <div class="share-buttons">
-    <a target="_blank" rel="noopener noreferrer" aria-label="share Analyzing Kubernetes scaling using some Algebra on twitter"
-        href="https://twitter.com/intent/tweet/?text=Analyzing%20Kubernetes%20scaling%20using%20some%20Algebra&amp;url=http%3a%2f%2fshalbhav.github.io%2fposts%2fk8s-hpa-algebra%2f&amp;hashtags=">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Entropy and Life on twitter"
+        href="https://twitter.com/intent/tweet/?text=Entropy%20and%20Life&amp;url=http%3a%2f%2fshalbhav.github.io%2fposts%2fentropy-and-life%2f&amp;hashtags=probability">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
         </svg>
     </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share Analyzing Kubernetes scaling using some Algebra on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fshalbhav.github.io%2fposts%2fk8s-hpa-algebra%2f&amp;title=Analyzing%20Kubernetes%20scaling%20using%20some%20Algebra&amp;summary=Analyzing%20Kubernetes%20scaling%20using%20some%20Algebra&amp;source=http%3a%2f%2fshalbhav.github.io%2fposts%2fk8s-hpa-algebra%2f">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Entropy and Life on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fshalbhav.github.io%2fposts%2fentropy-and-life%2f&amp;title=Entropy%20and%20Life&amp;summary=Entropy%20and%20Life&amp;source=http%3a%2f%2fshalbhav.github.io%2fposts%2fentropy-and-life%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
         </svg>
     </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share Analyzing Kubernetes scaling using some Algebra on whatsapp"
-        href="https://api.whatsapp.com/send?text=Analyzing%20Kubernetes%20scaling%20using%20some%20Algebra%20-%20http%3a%2f%2fshalbhav.github.io%2fposts%2fk8s-hpa-algebra%2f">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Entropy and Life on whatsapp"
+        href="https://api.whatsapp.com/send?text=Entropy%20and%20Life%20-%20http%3a%2f%2fshalbhav.github.io%2fposts%2fentropy-and-life%2f">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
