@@ -28,35 +28,27 @@
         }
 
     </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
 
-            .list {
-                background: var(--theme);
-            }
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
+>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
 
-    </style>
-</noscript><meta property="og:title" content="ChatGPT is an LLM and not an LMM (yet)" />
+<meta property="og:title" content="ChatGPT is an LLM and not an LMM (yet)" />
 <meta property="og:description" content="While I was refreshing some concepts in statistics, I came up with a problem I thought I could ask ChatGPT (talk about attention deficit). I am still using the cheap ChatGPT3.5, so what I am about to show may not work on the expensive ChatGPT4.0. Here&rsquo;s an example on how it can mislead while solving math problems and one should already have an inkling how to solve the problem (or atleast have an estimate of the answer) to do some prompt engineering to finally get to a solution." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://shalbhav.github.io/posts/chatgpt-llm-not-lmm/" /><meta property="article:section" content="posts" />
@@ -98,8 +90,8 @@
   "keywords": [
     
   ],
-  "articleBody": "While I was refreshing some concepts in statistics, I came up with a problem I thought I could ask ChatGPT (talk about attention deficit). I am still using the cheap ChatGPT3.5, so what I am about to show may not work on the expensive ChatGPT4.0. Here’s an example on how it can mislead while solving math problems and one should already have an inkling how to solve the problem (or atleast have an estimate of the answer) to do some prompt engineering to finally get to a solution.\nHere’s the conversation (edited out quite a bit of fluff). My prompts are in italics.\nThe conversation Me: What is the probability of 3 samples from a normal distribution to be one standard deviation more than the mean?\nChatGPT: In a standard normal distribution (with a mean of 0 and a standard deviation of 1), the probability that a random variable falls within one standard deviation of the mean is approximately 68.27%. This is a well-known property of the normal distribution. The probability that the first sample is one standard deviation more than the mean is approximately 0.6827 (68.27%).\nSince each sample is independent, the probability that the second sample is also one standard deviation more than the mean is also 0.6827 (68.27%).\nSimilarly, the probability that the third sample is one standard deviation more than the mean is 0.6827 (68.27%).\nTo find the combined probability that all three events occur, you simply multiply these probabilities together because they are independent:\n0.6827 * 0.6827 * 0.6827 ≈ 0.3194\nMe (to myself): That seems wrong, so let’s prompt again…\nMe (to ChatGPT): What is the probability of a sample from a normal distribution to be more than one standard deviation away from the mean?\nChatGPT: In a standard normal distribution (with a mean of 0 and a standard deviation of 1), the probability that a random variable falls more than one standard deviation away from the mean (in either direction) is approximately 31.73%. Using standard normal tables or a calculator, you can find the probabilities associated with Z \u003c -1 and Z \u003e 1, which are approximately 0.1587 and 0.1587, respectively.\nNow, add these probabilities:\n0.1587 + 0.1587 ≈ 0.3174\nSo, the probability that a sample from your normal distribution is more than one standard deviation away from the mean is approximately 31.74%.\nMe: Does this change your answer to the previous question?\nYes, the probability that a sample from a normal distribution is more than one standard deviation away from the mean is approximately 31.74%, as calculated in the previous response. This probability applies to each individual sample.\nIn the previous question, you asked about the probability that three samples from the same distribution are each one standard deviation more than the mean.\nTherefore, the probability that all three samples are each one standard deviation more than the mean remains the same:\n0.3174 * 0.3174 * 0.3174 ≈ 0.0320 or approximately 3.20%.\nConcluding thoughts The astute reader will recognize that it’s still wrong, since I am asking for the probability of the sample being one std more than the mean, whereas it’s still calculating the answer for one std away from the mean (i.e., it’s calculating the probability that the points are on both sides of the distribution instead of calculating for the points being on the upper side of the distribution).\nThe correct answer is (0.1587)^3.\nAnyway, thought I’d share this non-wordly stuff. Can’t fault it, it’s an Large Language Model, not an Large Math Model (weird, evil, nervous laugter, umbwaahhaaha).\n",
-  "wordCount" : "590",
+  "articleBody": "While I was refreshing some concepts in statistics, I came up with a problem I thought I could ask ChatGPT (talk about attention deficit). I am still using the cheap ChatGPT3.5, so what I am about to show may not work on the expensive ChatGPT4.0. Here’s an example on how it can mislead while solving math problems and one should already have an inkling how to solve the problem (or atleast have an estimate of the answer) to do some prompt engineering to finally get to a solution.\nHere’s the conversation (edited out quite a bit of fluff). My prompts are in italics.\nThe conversation Me: What is the probability of 3 samples from a normal distribution to be one standard deviation more than the mean?\nChatGPT: In a standard normal distribution (with a mean of 0 and a standard deviation of 1), the probability that a random variable falls within one standard deviation of the mean is approximately 68.27%. This is a well-known property of the normal distribution. The probability that the first sample is one standard deviation more than the mean is approximately 0.6827 (68.27%).\nSince each sample is independent, the probability that the second sample is also one standard deviation more than the mean is also 0.6827 (68.27%).\nSimilarly, the probability that the third sample is one standard deviation more than the mean is 0.6827 (68.27%).\nTo find the combined probability that all three events occur, you simply multiply these probabilities together because they are independent:\n0.6827 * 0.6827 * 0.6827 ≈ 0.3194\nMe (to myself): That seems wrong, so let’s prompt again…\nMe (to ChatGPT): What is the probability of a sample from a normal distribution to be more than one standard deviation away from the mean?\nChatGPT: In a standard normal distribution (with a mean of 0 and a standard deviation of 1), the probability that a random variable falls more than one standard deviation away from the mean (in either direction) is approximately 31.73%. Using standard normal tables or a calculator, you can find the probabilities associated with Z \u003c -1 and Z \u003e 1, which are approximately 0.1587 and 0.1587, respectively.\nNow, add these probabilities:\n0.1587 + 0.1587 ≈ 0.3174\nSo, the probability that a sample from your normal distribution is more than one standard deviation away from the mean is approximately 31.74%.\nMe: Does this change your answer to the previous question?\nYes, the probability that a sample from a normal distribution is more than one standard deviation away from the mean is approximately 31.74%, as calculated in the previous response. This probability applies to each individual sample.\nIn the previous question, you asked about the probability that three samples from the same distribution are each one standard deviation more than the mean.\nTherefore, the probability that all three samples are each one standard deviation more than the mean remains the same:\n0.3174 * 0.3174 * 0.3174 ≈ 0.0320 or approximately 3.20%.\nConcluding thoughts The astute reader will recognize that it’s still wrong, since I am asking for the probability of the sample being one std more than the mean, whereas it’s still calculating the answer for one std away from the mean (i.e., it’s calculating the probability that the points are on both sides of the distribution instead of calculating for the points being on the upper side of the distribution).\nThe correct answer is (0.1587)^3.\nAnyway, thought I’d share this non-wordly stuff. Can’t fault it, it’s an Large Language Model, not an Large Math Model… yet (weird, evil, nervous laugter, umbwaahhaaha).\n",
+  "wordCount" : "591",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -122,10 +114,6 @@
 <body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
     }
 
@@ -275,7 +263,7 @@ on both sides of the distribution instead of calculating for the
 points being on the upper side of the distribution).</p>
 <p>The correct answer is (0.1587)^3.</p>
 <p>Anyway, thought I&rsquo;d share this non-wordly stuff. Can&rsquo;t fault it, it&rsquo;s
-an Large Language Model, not an Large Math Model (weird, evil, nervous
+an Large Language Model, not an Large Math Model&hellip; yet (weird, evil, nervous
 laugter, umbwaahhaaha).</p>
 
 

@@ -30,35 +30,27 @@ If you pick a random point (or throw a dart) on a circle, there are more chances
         }
 
     </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
 
-            .list {
-                background: var(--theme);
-            }
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
+>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
 
-    </style>
-</noscript><meta property="og:title" content="Expectation of distances of random points on a circular disc" />
+<meta property="og:title" content="Expectation of distances of random points on a circular disc" />
 <meta property="og:description" content="I came across this probability problem and thought it was interesting.
 What is the expectation of distance (from the center) of a circular disc to uniformly distributed random points on the disc?
 If you pick a random point (or throw a dart) on a circle, there are more chances of the point landing somewhere between the center and the perimeter of the circular disc. Intuitively, this is because there are more points on the disc, i." />
@@ -104,7 +96,7 @@ If you pick a random point (or throw a dart) on a circle, there are more chances
   "keywords": [
     "probability"
   ],
-  "articleBody": "I came across this probability problem and thought it was interesting.\nWhat is the expectation of distance (from the center) of a circular disc to uniformly distributed random points on the disc?\nIf you pick a random point (or throw a dart) on a circle, there are more chances of the point landing somewhere between the center and the perimeter of the circular disc. Intuitively, this is because there are more points on the disc, i.e., more area available, as we move away from the center and so there is a higher probability of the random point being away from the center. So, in expectation, it seems like the distance of random points on the circular disc must be greater than half the radius. Let’s see how to get the exact value.\nConsider this circle of radius R and a random point about a distance r from the center. Now consider a very small circular strip of thickness dx at r.\nSo the average distance of a random point from the center of a circle of radius R is given by \\( \\frac{2*R^2}{3} \\). For a unit circle, the average or the expectation of the distance of random points on a circle is 2/3.\n",
+  "articleBody": "I came across this probability problem and thought it was interesting.\nWhat is the expectation of distance (from the center) of a circular disc to uniformly distributed random points on the disc?\nIf you pick a random point (or throw a dart) on a circle, there are more chances of the point landing somewhere between the center and the perimeter of the circular disc. Intuitively, this is because there are more points on the disc, i.e., more area available, as we move away from the center and so there is a higher probability of the random point being away from the center. So, in expectation, it seems like the distance of random points on the circular disc must be greater than half the radius. Let’s see how to get the exact value.\nConsider this circle of radius R and a random point about a distance r from the center. Now consider a very small circular strip of thickness dx at r.\nSo the average distance of a random point from the center of a circle of radius R is given by \\( \\frac{2*R^2}{3} \\).\nFor a unit circle, the average or the expectation of the distance of random points on a circle is 2/3.\n",
   "wordCount" : "204",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
@@ -128,10 +120,6 @@ If you pick a random point (or throw a dart) on a circle, there are more chances
 <body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
     }
 
@@ -226,9 +214,9 @@ thickness <em>dx</em> at <em>r</em>.</p>
 </figure>
 
 <p>So the average distance of a random point from the center of a circle
-of radius <em>R</em> is given by \( \frac{2*R^2}{3} \). For a unit circle,
-the average or the expectation of the distance of random points on a
-circle is 2/3.</p>
+of radius <em>R</em> is given by \( \frac{2*R^2}{3} \).</p>
+<p>For a unit circle, the average or the expectation of the distance of
+random points on a circle is 2/3.</p>
 
 
   </div>
