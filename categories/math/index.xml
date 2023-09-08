@@ -18,6 +18,15 @@ Imagine a game show. There are 3 doors and behind one door there is a car and be
     </item>
     
     <item>
+      <title>ChatGPT is an LLM and not an LMM (yet)</title>
+      <link>http://shalbhav.github.io/posts/chatgpt-llm-not-lmm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/chatgpt-llm-not-lmm/</guid>
+      <description>While I was refreshing some concepts in statistics, I came up with a problem I thought I could ask ChatGPT (talk about attention deficit). I am still using the cheap ChatGPT3.5, so what I am about to show may not work on the expensive ChatGPT4.0. Here&amp;rsquo;s an example on how it can mislead while solving math problems and one should already have an inkling how to solve the problem (or atleast have an estimate of the answer) to do some prompt engineering to finally get to a solution.</description>
+    </item>
+    
+    <item>
       <title>Expectation of distances of random points on a circular disc</title>
       <link>http://shalbhav.github.io/posts/expected-distance-disc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
