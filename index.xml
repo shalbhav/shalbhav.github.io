@@ -55,6 +55,15 @@ Work is done when there is change in energy. For example, while humans and other
     </item>
     
     <item>
+      <title>Marangoni&#39;s Toy Boat</title>
+      <link>http://shalbhav.github.io/posts/marangoni-toy-boat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://shalbhav.github.io/posts/marangoni-toy-boat/</guid>
+      <description>The Marangoni effect is a phenomenon in fluid dynamics where a change in surface tension along the interface of two fluids causes the movement of liquid (Ref. 1). This effect can be demonstrated using a toy boat with soap or camphor mounted at the center/rear of the boat touching the water. The dissolved soap or camphor causes a reduction of surface tension of water at the back of the boat compared to the surface tension of water at the front.</description>
+    </item>
+    
+    <item>
       <title>A container does not need an OS</title>
       <link>http://shalbhav.github.io/posts/container-no-os/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
