@@ -20,6 +20,7 @@
 <link rel="mask-icon" href="http://shalbhav.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://shalbhav.github.io/posts/marangoni-toy-boat/">
 <noscript>
     <style>
         #theme-toggle,
@@ -90,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function() {
   "keywords": [
     
   ],
-  "articleBody": "The Marangoni effect is a phenomenon in fluid dynamics where a change in surface tension along the interface of two fluids causes the movement of liquid (Ref. 1). This effect can be demonstrated using a toy boat with soap or camphor mounted at the center/rear of the boat touching the water. The dissolved soap or camphor causes a reduction of surface tension of water at the back of the boat compared to the surface tension of water at the front. This effectively acts as a little motor that can propel the toy boat.\nThe Toy Boat To test this out I made a tiny boat (2cm x 1cm) out of lightweight wood with a notch at the rear of the boat to mount a camphor tablet. The position of the notch allows the camphor to be placed a little closer to the center of the boat whilst still allowing the camphor to touch the water.\nFigure 1: Little Lightweight Toy Boat\nWhether one is 50 or 15, you cannot help but feel like a 5 year old when you see a boat autonomously circling around in a bowl of water powered by a humble camphor tablet (or a small piece of soap even).\nFigure 2: Propelled by a Camphor motor\nForces at play In general the boat moves due to a surface tension gradient caused by the camphor concentration. This causes the surface tension to be more ahead of the boat and creates a net postive force on the front of the boat. The following picture captures the different forces.\nFigure 3: Balance of forces\nIn the case of a body that wets completely, the angles \\( \\alpha \\) and \\( \\beta \\) would be \\( 90\\degree \\), and the horizontal forces on the boat will simply be equal to the respective surface tensions, \\( \\sigma_0 \\) and \\( \\sigma_c \\).\nSome intuition The surface tension gradient is changing over time due to the diffusion of camphor in water. The following picture shows the angles formed by the surface of the water with the object. The angle of contact due to the surface tensions will be different depending on the concentration of camphor, which is higher at the rear of the boat, resulting in lowering of surface tension. As the concentration gradient moves towards the front of the boat, the region of higher surface tension becomes a region of lower surface tension and causes the object to move over time. It helps me to visualize this as a traveling wave.\nFigure 4: Concentration gradient causing movement\nAt the deeper end There would be some amount of fluidic friction due to viscosity which creates a drag on the overall force, which is not captured above. At very small scales all of these forces would matter and the behavior of objects due to these tiny forces cause interesting effects.\nThe concentration gradient is usually modeled using reaction-diffusion equations (Ref. 2), so called because, taking our current example, there is a reaction that causes the camphor molecules to mix with water, and a diffusion phenomena that causes these molecules to spread in time.\nActual measurements done in a more calibrated environment shows that difference in surface tensions to be in the order of 1.1 mN/m and the speed of the boat to be around 66 mm/s. In our rough home experiment, we can atleast see that the boat moves a few cms/second.\nThis turned out to be a fun and interesting experiment which made me brush up on some fluid mechanics and a bit of differential calculus.\nReferences Wikipedia on Marangoni Effect Quantitative Estimation of the Parameters for Self-Motion Driven by Difference in Surface Tension ",
-  "wordCount" : "612",
+  "articleBody": "The Marangoni effect is a phenomenon in fluid dynamics where a change in surface tension along the interface of two fluids causes the movement of liquid (Ref. 1). This effect can be demonstrated using a toy boat with soap or camphor mounted at the center/rear of the boat touching the water. The dissolved soap or camphor causes a reduction of surface tension of water at the back of the boat compared to the surface tension of water at the front. This effectively acts as a little motor that can propel the toy boat.\nThe Toy Boat To test this out I made a tiny boat (2cm x 1cm) out of lightweight wood with a notch at the rear of the boat to mount a camphor tablet. The position of the notch allows the camphor to be placed a little closer to the center of the boat whilst still allowing the camphor to touch the water.\nFigure 1: Little Lightweight Toy Boat\nWhether one is 50 or 15, you cannot help but feel like a 5 year old when you see a boat autonomously circling around in a bowl of water powered by a humble camphor tablet (or a small piece of soap even).\nFigure 2: Propelled by a Camphor motor\nForces at play In general the boat moves due to a surface tension gradient caused by the camphor concentration. This causes the surface tension to be more ahead of the boat and creates a net postive force on the front of the boat. The following picture captures the different forces.\nFigure 3: Balance of forces\nIn the case of a body that wets completely, the angles \\( \\alpha \\) and \\( \\beta \\) would be \\( 90\\degree \\), and the horizontal forces on the boat will simply be equal to the respective surface tensions, \\( \\sigma_0 \\) and \\( \\sigma_c \\).\nSome intuition The surface tension gradient is changing over time due to the diffusion of camphor in water. The following picture shows the angles formed by the surface of the water with the object. The angle of contact due to the surface tensions will be different depending on the concentration of camphor, which is higher at the rear of the boat, resulting in lowering of surface tension. As the concentration gradient moves towards the front of the boat, the region of higher surface tension becomes a region of lower surface tension and causes the object to move over time. It helps me to visualize this as a traveling wave.\nFigure 4: Concentration gradient causing movement\nAt the deeper end There would be some amount of fluidic friction due to viscosity which creates a drag on the overall force, which is not captured above. At very small scales all of these forces would matter and the behavior of objects due to these tiny forces cause interesting effects.\nThe concentration gradient is usually modeled using reaction-diffusion equations (Ref. 2), so called because, taking our current example, there is a reaction that causes the camphor molecules to mix with water, and a diffusion phenomena that causes these molecules to spread in time.\nActual measurements done in a more calibrated environment shows that difference in surface tensions to be in the order of 1.1 mN/m and the speed of the boat to be around 66 mm/s. In our rough home experiment, we can atleast see that the boat moves a few cms/second.\nThis turned out to be a fun and interesting experiment and all errors in the analysis is of course my own.\nReferences Wikipedia on Marangoni Effect Quantitative Estimation of the Parameters for Self-Motion Driven by Difference in Surface Tension ",
+  "wordCount" : "608",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -144,6 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -292,8 +295,8 @@ spread in time.</p>
 difference in surface tensions to be in the order of 1.1 <em>mN/m</em> and
 the speed of the boat to be around 66 <em>mm/s</em>. In our rough home
 experiment, we can atleast see that the boat moves a few cms/second.</p>
-<p>This turned out to be a fun and interesting experiment which made me
-brush up on some fluid mechanics and a bit of differential calculus.</p>
+<p>This turned out to be a fun and interesting experiment and all errors
+in the analysis is of course my own.</p>
 <h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Marangoni_effect">Wikipedia on Marangoni Effect</a></li>
@@ -349,7 +352,7 @@ Difference in Surface Tension</a></li>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="http://shalbhav.github.io/">YAB (Yet Another Blog)</a></span>
+    <span>&copy; 2024 <a href="http://shalbhav.github.io/">YAB (Yet Another Blog)</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

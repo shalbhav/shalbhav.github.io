@@ -21,6 +21,7 @@ Let&rsquo;s create a small c program that is statically compiled.">
 <link rel="mask-icon" href="http://shalbhav.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://shalbhav.github.io/posts/container-no-os/">
 <noscript>
     <style>
         #theme-toggle,
@@ -147,6 +148,8 @@ Let&rsquo;s create a small c program that is statically compiled."/>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -201,9 +204,9 @@ nothing.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> cat small.c
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> main()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  write(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;Hi!&#34;</span>, <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">write</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;Hi!&#34;</span>, <span style="color:#ae81ff">3</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> gcc <span style="color:#f92672">-</span>o small small.c <span style="color:#f92672">--</span><span style="color:#66d9ef">static</span>
@@ -250,7 +253,7 @@ to the kernel.</p>
   <a class="next" href="http://shalbhav.github.io/posts/k8s-hpa-algebra/">
     <span class="title">Next »</span>
     <br>
-    <span>Analyzing Kubernetes scaling using some Algebra</span>
+    <span>Analyzing Kubernetes container based scaling</span>
   </a>
 </nav>
 
@@ -283,7 +286,7 @@ to the kernel.</p>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="http://shalbhav.github.io/">YAB (Yet Another Blog)</a></span>
+    <span>&copy; 2024 <a href="http://shalbhav.github.io/">YAB (Yet Another Blog)</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
