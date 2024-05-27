@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://shalbhav.github.io/posts/geom-proof-trig-deriv/</loc>
+  </url><url>
     <loc>http://shalbhav.github.io/posts/monty-hall-sim/</loc>
   </url><url>
     <loc>http://shalbhav.github.io/posts/entropy-and-life/</loc>
@@ -35,6 +37,8 @@
     <loc>http://shalbhav.github.io/tags/emacs/</loc>
   </url><url>
     <loc>http://shalbhav.github.io/categories/linux/</loc>
+  </url><url>
+    <loc>http://shalbhav.github.io/tags/math/</loc>
   </url><url>
     <loc>http://shalbhav.github.io/categories/math/</loc>
   </url><url>
